@@ -39,10 +39,6 @@ def test_preprocessing_pipeline_fit_transform():
 
     # Fit transform should run without errors
     X_transformed = preprocessor.fit_transform(X_sample)
-
-    # Output shape should be same rows and columns
     assert X_transformed.shape == X_sample.shape
-
-    # Check no missing values after transform
     assert not pd.isnull(X_transformed).any()
 
