@@ -13,16 +13,10 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 
-# Load dataset
 data = pd.read_csv("data/processed/with_labels.csv")
-
-# Set target
 y = data["is_high_risk"]
-
-# Drop target + identifier columns from features
 X = data.drop(columns=["is_high_risk", "CustomerId", "TransactionId"], errors='ignore')
 
-# Select only numeric columns
 X = X.select_dtypes(include=["int64", "float64"])
 
 # Train/test split
@@ -34,12 +28,10 @@ numeric_transformer = Pipeline(steps=[
     ('scaler', StandardScaler())
 ])
 
-# Apply preprocessor to all numeric features
 preprocessor = ColumnTransformer(transformers=[
     ('num', numeric_transformer, X.columns)
 ])
 
-# Define models and hyperparameters
 models = {
     "logistic_regression": {
         "model": LogisticRegression(max_iter=1000),
@@ -85,7 +77,6 @@ for model_name, config in models.items():
             "roc_auc": roc_auc_score(y_test, y_prob)
         })
 
-        # Save model
         mlflow.sklearn.log_model(clf.best_estimator_, "model", registered_model_name=model_name)
 
         print(f"✅ Finished training: {model_name}")
