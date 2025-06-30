@@ -5,10 +5,11 @@ import pandas as pd
 
 app = FastAPI()
 
-MODEL_NAME = "random_forest"   # Replace with your registered model name
-MODEL_VERSION = "1"            # Use the correct version
+MODEL_NAME = "random_forest"   
+MODEL_VERSION = "1"          
 
-model = mlflow.pyfunc.load_model(f"..\mlruns\975347351455683709\models\m-add428fdfa0149d48a24387cb8a1f5e6\artifacts")
+model = mlflow.pyfunc.load_model(r"mlruns\975347351455683709\models\m-add428fdfa0149d48a24387cb8a1f5e6\artifacts")
+
 
 @app.post("/predict", response_model=CreditRiskResponse)
 def predict_risk(request: CreditRiskRequest):
