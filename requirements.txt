@@ -3,3 +3,7 @@ pandas
 numpy
 mlflow
 pytest
+fastapi
+uvicorn[standard]
+pydantic
+flake8 
