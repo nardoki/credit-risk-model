@@ -24,18 +24,22 @@ This project aims to build a credit risk prediction system using machine learnin
 # Clone the repo
 git clone https://github.com/your-username/credit-risk-model.git
 cd credit-risk-model
-
+```
+```bash
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
+```
+```bash
 # Install dependencies
 pip install -r requirements.txt
 ```
 
 
 📘 Credit Scoring Business Understanding
+
 **1. How does the Basel II Accord’s emphasis on risk measurement influence our need for an interpretable and well-documented model?**
+
   -Basel II requires banks to:
 
   -Measure credit risk accurately
@@ -44,7 +48,6 @@ pip install -r requirements.txt
 
 The Basel II Accord emphasizes accurate, transparent risk measurement. This requires credit scoring models to be interpretable, well-documented, and auditable so that both internal teams and regulators can understand and validate how credit decisions are made.
 
-This places a strong emphasis on using interpretable models and maintaining clear documentation. While modern ML models offer better accuracy, the Basel II framework nudges institutions toward responsible AI—ensuring models are not black boxes, but rather tools that support informed, compliant credit decisions.
 
 **2. Since we lack a direct "default" label, why is creating a proxy variable necessary, and what are the potential business risks of making predictions based on this proxy?**
 
