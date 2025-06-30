@@ -11,6 +11,9 @@ from xverse.transformer import WOE
 # ----------------------
 # Custom Transformers
 # ----------------------
+def add_feature_sum(df, col1, col2, new_col):
+    df[new_col] = df[col1] + df[col2]
+    return df
 
 class TransactionAggregates(BaseEstimator, TransformerMixin):
     def __init__(self):
