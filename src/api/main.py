@@ -10,8 +10,14 @@ MODEL_VERSION = "1"
 
 model = mlflow.pyfunc.load_model(r"mlruns\975347351455683709\models\m-add428fdfa0149d48a24387cb8a1f5e6\artifacts")
 
+<<<<<<< HEAD
+=======
+model = mlflow.pyfunc.load_model(r"mlruns\975347351455683709\models\m-add428fdfa0149d48a24387cb8a1f5e6\artifacts")
+
+>>>>>>> 9a8bc4d0ac6b56f1af791ee9a20c527797ae612b
 
 @app.post("/predict", response_model=CreditRiskResponse)
+
 def predict_risk(request: CreditRiskRequest):
     input_data = pd.DataFrame([request.dict()])
     try:

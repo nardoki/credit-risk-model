@@ -77,6 +77,7 @@ for model_name, config in models.items():
             "roc_auc": roc_auc_score(y_test, y_prob)
         })
 
-        mlflow.sklearn.log_model(clf.best_estimator_, "model", registered_model_name=model_name)
+        mlflow.sklearn.log_model(clf.best_estimator_, name="model", registered_model_name=model_name)
+
 
         print(f"✅ Finished training: {model_name}")

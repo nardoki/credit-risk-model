@@ -45,7 +45,7 @@ def merge_labels(df, rfm_df):
 # 5. Main function
 if __name__ == "__main__":
     RAW_DATA_PATH = '../data/raw/data.csv'
-    PROCESSED_PATH = "data/processed/with_labels.csv"
+    PROCESSED_PATH = "../data/processed/with_labels.csv"
 
     print("Loading raw data...")
     df = pd.read_csv(RAW_DATA_PATH)
